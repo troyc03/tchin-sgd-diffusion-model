@@ -1,9 +1,6 @@
-import numpy as np
 import torch
 from torch.nn import functional as F
 import torch.nn as nn
-import torch.optim as optim
-import matplotlib.pyplot as plt
 
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes=10):
