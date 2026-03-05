@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import torch
 
 class FokkerPlanckSolver:
     def __init__(self, drift_func, diffusion_func, x_range=(-10, 10), dx=0.1):

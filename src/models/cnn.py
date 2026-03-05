@@ -1,6 +1,9 @@
 import torch
 from torch.nn import functional as F
 import torch.nn as nn
+from sklearn.linear_model import SGDRegressor
+import matplotlib.pyplot as plt
+
 
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes=10):
@@ -55,3 +58,40 @@ def test(model, device, test_loader):
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
         test_loss, correct, len(test_loader.dataset),
         100. * correct / len(test_loader.dataset)))
+    
+def predict(model, device, data_loader):
+    model.eval()
+    predictions = []
+    with torch.no_grad():
+        for data in data_loader:
+            data = data.to(device)
+            output = model(data)
+            pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
+            predictions.extend(pred.cpu().numpy())
+    return predictions
+
+def fit_sgd_regressor(X_train, y_train):
+    regressor = SGDRegressor(max_iter=1000, tol=1e-3)
+    regressor.fit(X_train, y_train)
+    plt.plot(regressor.loss_curve_)
+    return regressor
+
+if __name__ == '__main__':
+    import torchvision
+    import torch.utils.data  
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = SimpleCNN(num_classes=10).to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+    # 1. Define the datasets
+    train_dataset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=torchvision.transforms.ToTensor())
+    test_dataset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=torchvision.transforms.ToTensor())
+
+    # 2. Create DataLoaders (This is the missing step)
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1000, shuffle=False)
+
+    for epoch in range(1, 2):
+        train(model, device, train_loader, optimizer, epoch)
+        test(model, device, test_loader)
