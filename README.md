@@ -214,4 +214,4 @@ If you use this project in your research, please cite:
 ## References
 
 - [Mandt, Stephan, Matthew D. Hoffman, and David M. Blei. "Stochastic gradient descent as approximate bayesian inference." Journal of Machine Learning Research 18.134 (2017): 1-35.](https://www.jmlr.org/papers/volume18/17-214/17-214.pdf))
-- [Stochastic Gradient Descent Introduces an Effective Landscape-Dependent Regularization Favoring Flat Solutions](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.237101)
+- [Yang, Ning, Chao Tang, and Yuhai Tu. "Stochastic gradient descent introduces an effective landscape-dependent regularization favoring flat solutions." Physical Review Letters 130.23 (2023): 237101.](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.237101)
