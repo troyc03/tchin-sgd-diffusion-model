@@ -31,3 +31,35 @@ class FokkerPlanckSolver:
             p[t] /= np.sum(p[t]) * self.dx
         
         return p
+    
+# Example usage
+if __name__ == "__main__":
+    # Define drift and diffusion functions
+    def drift(x):
+        return -0.5 * x
+
+    def diffusion(x):
+        return 0.1 * np.ones_like(x)
+
+    # Create solver
+    solver = FokkerPlanckSolver(drift, diffusion, x_range=(-10, 10), dx=0.1)
+
+    # Initial condition: Gaussian centered at 0
+    x_grid = solver.x_grid
+    p0 = np.exp(-x_grid**2 / (2 * 0.5**2)) / (0.5 * np.sqrt(2 * np.pi))
+
+    # Solve Fokker-Planck equation
+    T = 10.0  # Total time
+    dt = 0.01  # Time step
+    p = solver.solve(p0, T, dt)
+
+    # Plot results
+    plt.figure(figsize=(10, 6))
+    for t in range(0, p.shape[0], int(p.shape[0] / 5)):
+        plt.plot(x_grid, p[t], label=f'Time={t*dt:.2f}')
+    plt.xlabel('x')
+    plt.ylabel('p(x, t)')
+    plt.title('Fokker-Planck Equation Solution')
+    plt.legend()
+    plt.grid()
+    plt.show()

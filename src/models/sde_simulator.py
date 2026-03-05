@@ -19,4 +19,27 @@ class SDESimulator:
             x[t] = x[t-1] + drift * self.dt + diffusion * noise
         return x
     
-    
+# Example usage
+if __name__ == "__main__":
+    # Define drift and diffusion functions
+    def drift(x):
+        return -0.5 * x
+
+    def diffusion(x):
+        return 0.1 * torch.ones_like(x)
+
+    # Create simulator
+    simulator = SDESimulator(drift, diffusion, dt=0.01)
+
+    # Simulate SDE
+    x0 = torch.tensor([1.0])  # Initial condition
+    T = 10.0  # Total time
+    trajectory = simulator.simulate(x0, T)
+
+    # Plot trajectory
+    plt.plot(np.arange(trajectory.shape[0]) * simulator.dt, trajectory.numpy())
+    plt.xlabel('Time')
+    plt.ylabel('X(t)')
+    plt.title('SDE Simulation')
+    plt.grid()
+    plt.show()
