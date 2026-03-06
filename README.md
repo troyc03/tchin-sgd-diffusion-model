@@ -196,7 +196,7 @@ Contributions are welcome. Please ensure code follows the project structure and 
 
 ## License
 
-See LICENSE file for details.
+See [LICENSE](https://github.com/troyc03/tchin-sgd-diffusion-model/blob/main/LICENSE) file for details.
 
 ## Citation
 
