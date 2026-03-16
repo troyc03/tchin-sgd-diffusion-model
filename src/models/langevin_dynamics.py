@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+import matplotlib.pyplot as plt
 
 class LangevinDynamics:
 
@@ -28,5 +29,6 @@ class LangevinDynamics:
     def simulate(self, num_steps):
         for _ in range(num_steps):
             self.step()
+       
 
 

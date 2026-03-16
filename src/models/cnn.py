@@ -42,3 +42,4 @@ class SimpleCNN(nn.Module):
             # Copy the corresponding parameters from the vector to the model
             param.data.copy_(torch.from_numpy(param_vector[pointer:pointer + num_param].reshape(param.shape)))
             pointer += num_param
+            

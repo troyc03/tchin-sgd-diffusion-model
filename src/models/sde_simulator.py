@@ -23,5 +23,15 @@ class SDESimulator:
     
     def simulate(self, x0, num_steps):
         return self.euler_maruyama(x0, num_steps)
+
+    def plot_trajectory(self, x0, num_steps):
+        trajectory = self.simulate(x0, num_steps)
+        plt.plot(trajectory)
+        plt.title('SDE Trajectory')
+        plt.xlabel('Time Steps')
+        plt.ylabel('State')
+        plt.show()
+
+    
     
     

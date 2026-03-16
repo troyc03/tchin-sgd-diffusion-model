@@ -15,5 +15,5 @@ if __name__ == "__main__":
     # Example usage
     model = SimpleCNN()
     loss_fn = torch.nn.CrossEntropyLoss()
-    data_loader = ...  # Define your data loader here
+    data_loader = ...
     measure_diffusion(model, data_loader)

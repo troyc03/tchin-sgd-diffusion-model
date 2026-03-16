@@ -38,3 +38,19 @@ class FokkerPlanckSolver:
         for _ in range(num_steps):
             p_n = self.solve_step(p_n, self.drift, self.diffusion)
         return p_n
+
+    def plot_trajectory(self, num_steps):
+        """
+        Plot the evolution of the probability density function over time.
+        """
+        p_n = self.rho
+        plt.plot(p_n, label='t=0')
+        for t in range(1, num_steps+1):
+            p_n = self.solve_step(p_n, self.drift, self.diffusion)
+            if t % (num_steps // 5) == 0: # plot at 5 time points
+                plt.plot(p_n, label=f't={t*self.dt:.2f}')
+        plt.title('Fokker-Planck Evolution')
+        plt.xlabel('State')
+        plt.ylabel('Probability Density')
+        plt.legend()
+        plt.show()

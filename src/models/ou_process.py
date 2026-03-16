@@ -22,5 +22,7 @@ class OUProcess:
     
     def simulate(self, x0, num_steps):
         return self.sample(x0, num_steps)
+
+    
     
     
