@@ -64,11 +64,6 @@ src/
 │   ├── trajectory_logger.py      # Logging parameter trajectories
 │   └── evaluation.py             # Model evaluation metrics
 │
-├── visualization/                # Plotting and analysis visualization
-│   ├── loss_curves.py            # Training/validation loss plots
-│   ├── eigenvalue_plots.py       # Hessian eigenvalue visualizations
-│   └── diffusion_plots.py        # Diffusion geometry visualizations
-│
 └── notebooks/                    # Interactive analysis notebooks
     ├── dataset_exploration.ipynb
     ├── gradient_noise_analysis.ipynb
