@@ -64,11 +64,6 @@ src/
 │   ├── trajectory_logger.py      # Logging parameter trajectories
 │   └── evaluation.py             # Model evaluation metrics
 │
-├── visualization/                # Plotting and analysis visualization
-│   ├── loss_curves.py            # Training/validation loss plots
-│   ├── eigenvalue_plots.py       # Hessian eigenvalue visualizations
-│   └── diffusion_plots.py        # Diffusion geometry visualizations
-│
 └── notebooks/                    # Interactive analysis notebooks
     ├── dataset_exploration.ipynb
     ├── gradient_noise_analysis.ipynb
@@ -94,69 +89,6 @@ pip install -r requirements.txt
 - Scikit-learn
 - Matplotlib, Seaborn
 - Jupyter
-
-## Usage
-
-### 1. Train a Model with Trajectory Logging
-
-```python
-from src.training.sgd_training import train_with_logging
-from src.datasets.data_loader import load_mnist
-
-train_loader, test_loader = load_mnist(batch_size=128)
-model, trajectory = train_with_logging(
-    train_loader, 
-    test_loader,
-    epochs=20,
-    learning_rate=0.01
-)
-```
-
-### 2. Analyze Hessian Spectrum
-
-```python
-from src.analysis.hessian_spectra import compute_hessian_spectrum
-
-eigenvalues, eigenvectors = compute_hessian_spectrum(
-    model, 
-    test_loader,
-    top_k=50  # Top 50 eigenvalues
-)
-```
-
-### 3. Measure Gradient Noise
-
-```python
-from src.analysis.gradient_noise import estimate_noise_covariance
-
-noise_cov = estimate_noise_covariance(
-    model,
-    train_loader,
-    num_samples=100
-)
-```
-
-### 4. Run Full Analysis Pipeline
-
-Execute the end-to-end pipeline:
-
-```bash
-python src/experiments/run_full_pipeline
-```
-
-### 5. Interactive Notebooks
-
-Explore the analysis interactively:
-
-```bash
-jupyter notebook src/notebooks/
-```
-
-Key notebooks:
-- `hessian_spectrum.ipynb` - Visualize eigenvalue evolution during training
-- `gradient_noise_analysis.ipynb` - Analyze noise structure
-- `diffusion_geometry.ipynb` - Study parameter diffusion
-- `sde_vs_sgd.ipynb` - Compare SDE simulations to actual SGD
 
 ## Theoretical Background
 
