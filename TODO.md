@@ -7,7 +7,7 @@
 - [x] Derive the Fokker-Planck Equation for the probability density
 - [ ] Formulate the Stability Criterion using the Spectral Gap
 - [ ] Establish the alignment between the Diffusion Tensor and Hessian
-- Derive and implement the Ornstein-Uhlenbeck 
+- [ ] Derive and implement the Ornstein-Uhlenbeck 
 Process for the SDE
 
 # Phase II: Computational Simulation 
