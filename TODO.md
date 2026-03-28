@@ -7,12 +7,12 @@
 - [x] Derive the Fokker-Planck Equation for the probability density
 - [ ] Formulate the Stability Criterion using the Spectral Gap
 - [ ] Establish the alignment between the Diffusion Tensor and Hessian
-- Derive and implement the Ornstein-Uhlenbeck 
+- [ ] Derive and implement the Ornstein-Uhlenbeck 
 Process for the SDE
 
 # Phase II: Computational Simulation 
-- [ ] Implement the Euler-Maruyama Integrator for the SDE
-- [ ] Compute the Mean Squared Displacement (MSD)
+- [x] Implement the Euler-Maruyama Integrator for the SDE
+- [x] Compute the Mean Squared Displacement (MSD)
 - [ ] Compute the Hessian spectra numerically via Lanczos Algorithm
 - [ ] Simulate the "Noise-Induced Drift"
 - [ ] Simulate the "Escape Time" from Sharp Minima
