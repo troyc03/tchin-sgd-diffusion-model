@@ -147,3 +147,7 @@ If you use this project in your research, please cite:
 
 - [Mandt, Stephan, Matthew D. Hoffman, and David M. Blei. "Stochastic gradient descent as approximate bayesian inference." Journal of Machine Learning Research 18.134 (2017): 1-35.](https://www.jmlr.org/papers/volume18/17-214/17-214.pdf))
 - [Yang, Ning, Chao Tang, and Yuhai Tu. "Stochastic gradient descent introduces an effective landscape-dependent regularization favoring flat solutions." Physical Review Letters 130.23 (2023): 237101.](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.237101)
+- [Yang, Ning, et al. "Transient learning dynamics drive escape from sharp valleys in Stochastic Gradient Descent." arXiv preprint arXiv:2601.10962 (2026).](https://arxiv.org/abs/2601.10962)
+- [Wei, Stanley, Alex Damian, and Jason D. Lee. "Improved high-dimensional estimation with Langevin dynamics and stochastic weight averaging." arXiv preprint arXiv:2603.06028 (2026).](https://arxiv.org/pdf/2603.06028)
+- [Granziol, Diego, and Khurshid Juarev. "Hessian Spectral Analysis at Foundation Model Scale." arXiv preprint arXiv:2602.00816 (2026).](https://arxiv.org/abs/2602.00816)
+- [Granziol, Diego, and Khurshid Juarev. "Hessian Spectral Analysis at Foundation Model Scale." arXiv preprint arXiv:2602.00816 (2026).](https://arxiv.org/pdf/2602.05600)
