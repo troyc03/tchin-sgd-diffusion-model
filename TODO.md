@@ -11,8 +11,8 @@
 Process for the SDE
 
 # Phase II: Computational Simulation 
-- [ ] Implement the Euler-Maruyama Integrator for the SDE
-- [ ] Compute the Mean Squared Displacement (MSD)
+- [x] Implement the Euler-Maruyama Integrator for the SDE
+- [x] Compute the Mean Squared Displacement (MSD)
 - [ ] Compute the Hessian spectra numerically via Lanczos Algorithm
 - [ ] Simulate the "Noise-Induced Drift"
 - [ ] Simulate the "Escape Time" from Sharp Minima
