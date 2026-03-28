@@ -11,7 +11,6 @@ from numpy.linalg import eigh
 import matplotlib.pyplot as plt
 
 class HessianSpectraAnalyzer:
-    # ... (rest of the __init__ method) ...
     def __init__(self, model, data_loader, loss_fn, device='cpu'):
         self.model = model.to(device)
         self.data_loader = data_loader
