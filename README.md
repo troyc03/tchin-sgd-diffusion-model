@@ -150,4 +150,4 @@ If you use this project in your research, please cite:
 - [Yang, Ning, et al. "Transient learning dynamics drive escape from sharp valleys in Stochastic Gradient Descent." arXiv preprint arXiv:2601.10962 (2026).](https://arxiv.org/abs/2601.10962)
 - [Wei, Stanley, Alex Damian, and Jason D. Lee. "Improved high-dimensional estimation with Langevin dynamics and stochastic weight averaging." arXiv preprint arXiv:2603.06028 (2026).](https://arxiv.org/pdf/2603.06028)
 - [Granziol, Diego, and Khurshid Juarev. "Hessian Spectral Analysis at Foundation Model Scale." arXiv preprint arXiv:2602.00816 (2026).](https://arxiv.org/abs/2602.00816)
-- [Granziol, Diego, and Khurshid Juarev. "Hessian Spectral Analysis at Foundation Model Scale." arXiv preprint arXiv:2602.00816 (2026).](https://arxiv.org/pdf/2602.05600)
+- [Zhang, Yikuan, Ning Yang, and Yuhai Tu. "On the Superlinear Relationship between SGD Noise Covariance and Loss Landscape Curvature." arXiv preprint arXiv:2602.05600 (2026).](https://arxiv.org/abs/2602.05600)
