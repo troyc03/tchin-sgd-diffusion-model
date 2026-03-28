@@ -101,5 +101,40 @@ def main():
     eigenvalues, _ = analyzer.analyze_spectra(hessian)
     analyzer.plot_spectra(eigenvalues)
 
+    # Build a simple model and dataset for additional Hessian analysis
+    model = nn.Sequential(
+        nn.Linear(10, 5),
+        nn.ReLU(),
+        nn.Linear(5, 1)
+    )
+
+    X = torch.randn(64, 10)
+    y = torch.randn(64, 1)
+    data_loader = DataLoader(TensorDataset(X, y), batch_size=32)
+
+    analyzer = HessianSpectraAnalyzer(model, data_loader, nn.MSELoss())
+    hessian = analyzer.compute_hessian()
+    eigenvalues, _ = analyzer.analyze_spectra(hessian)
+
+    spectral_gap = eigenvalues.max() - eigenvalues.min()
+    stable_dt = 2.0 / max(eigenvalues.max(), 1e-12)
+    condition_number = abs(eigenvalues.max() / max(eigenvalues.min(), 1e-12))
+    trace = eigenvalues.sum()
+
+    print(f"max eigenvalue: {eigenvalues.max():.4f}")
+    print(f"min eigenvalue: {eigenvalues.min():.4f}")
+    print(f"spectral gap: {spectral_gap:.4f}")
+    print(f"recommended stable Δt: {stable_dt:.4e}")
+    print(f"condition number: {condition_number:.4f}")
+    print(f"Hessian trace: {trace:.4f}")
+
+    plt.figure(figsize=(8, 4))
+    plt.hist(eigenvalues, bins=25, color='skyblue', edgecolor='black')
+    plt.title("Hessian Eigenvalue Distribution")
+    plt.xlabel("Eigenvalue")
+    plt.ylabel("Frequency")
+    plt.grid(True)
+    plt.show()
+
 if __name__ == '__main__':
     main()
