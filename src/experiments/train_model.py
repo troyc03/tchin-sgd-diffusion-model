@@ -10,8 +10,6 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import numpy as np
-from models.cnn import SimpleCNN
-import torch
 
 # Import CNN model and training functions from cnn.py
 class SimpleCNN(nn.Module):
