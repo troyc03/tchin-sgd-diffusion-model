@@ -43,7 +43,7 @@ class GradientNoiseAnalyzer:
         return stats
 
 def measure_noise(model, data_loader, loss_fn, num_iterations=10):
-    # Pass only the model and loss_fn to the analyzer
+    # Pass the model and loss_fn to the analyzer
     noise_analyzer = GradientNoiseAnalyzer(model, loss_fn)
     noise_measurements = []
     
@@ -57,7 +57,7 @@ def measure_noise(model, data_loader, loss_fn, num_iterations=10):
 
     return noise_measurements
 
-# Example model definition
+# Define a simple CNN for testing purposes
 class SimpleCNN(nn.Module):
     def __init__(self):
         super().__init__()
