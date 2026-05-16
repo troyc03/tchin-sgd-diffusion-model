@@ -24,7 +24,7 @@ we gain new insights into why SGD works well in practice and how its implicit no
 
 ## Key Features
 
-- **SDE Modeling**: Represent SGD as a continuous stochastic process (Langevin-BFGS dynamics)
+- **SDE Modeling**: Represent SGD as a continuous stochastic process (Langevin dynamics)
 - **Spectral Analysis**: Compute and visualize Hessian eigenvalues and their evolution
 - **Noise Characterization**: Estimate gradient noise covariance and perform PCA analysis
 - **Theoretical Framework**: Connect to Fokker-Planck equations and OU processes
